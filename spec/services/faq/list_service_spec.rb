@@ -45,7 +45,8 @@ describe FaqModule::ListService do
         it 'find question and answer in response' do
           faq = create(:faq)
 
-          @listService = FaqModule::ListService.new({'query' => faq.question.split(' ').sample}, 'search')
+          @listService = FaqModule::ListService.new(
+            {'query' => faq.question.split(' ').sample}, 'search')
 
           response = @listService.call()
 
@@ -58,7 +59,8 @@ describe FaqModule::ListService do
     context 'search_by_hashtag command' do
       context "Invalid hashtag" do
         it "return don find message" do
-          @listService = FaqModule::ListService.new({ 'query' => ''}, 'search_by_hashtag')
+          @listService = FaqModule::ListService.new(
+            { 'query' => ''}, 'search_by_hashtag')
 
           response = @listService.call()
 
@@ -72,7 +74,8 @@ describe FaqModule::ListService do
           hashtag = create(:hastag)
           create(:faq_hashtag, faq: faq, hashtag: hashtag)
 
-          @listService = FaqModule::ListService.new({ 'query' => hashtag.name }, 'search')
+          @listService = FaqModule::ListService.new(
+            { 'query' => hashtag.name }, 'search')
 
           response = @listService.call()
 
