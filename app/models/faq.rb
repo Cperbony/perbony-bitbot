@@ -1,3 +1,5 @@
+require 'pg_search'
+
 # Frequenty Asked Questions Class
 # One Faq has many hashtags
 class Faq < ActiveRecord::Base

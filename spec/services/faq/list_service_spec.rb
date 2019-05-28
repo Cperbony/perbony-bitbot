@@ -71,7 +71,7 @@ describe FaqModule::ListService do
       context "Valid hastag" do
         it "With valid hashtag, find question and answer in response" do
           faq = create(:faq)
-          hashtag = create(:hastag)
+          hashtag = create(:hashtag)
           create(:faq_hashtag, faq: faq, hashtag: hashtag)
 
           @listService = FaqModule::ListService.new(
