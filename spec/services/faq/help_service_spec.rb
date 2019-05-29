@@ -9,7 +9,7 @@ describe HelpService do
       expect(response).to match('Remova ID')
       expect(response).to match('O que você sabe sobre X')
       expect(response).to match('Pesquise a hashtag X')
-      expect(response).to match('Perguntas e respostas')
+      expect(response).to match('Perguntas e Respostas')
     end
   end
 end

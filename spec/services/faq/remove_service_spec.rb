@@ -10,7 +10,7 @@ describe FaqModule::RemoveService do
 
       it "Return success message" do
         response = @removeService.call()
-        expect(response).to match("Deletando com Sucesso")
+        expect(response).to match("Deletado com Sucesso")
       end
 
       it "Remove Faq from database" do
@@ -22,10 +22,10 @@ describe FaqModule::RemoveService do
 
     context "Invalid ID" do
       it "return error message" do
-        @removeService = FaqModule::removeService.new({"id" => rand(1..9999)})
+        @removeService = FaqModule::RemoveService.new({"id" => rand(1..9999)})
         response = @removeService.call()
 
-        expect(response).to match("Questão inválida, Verifique o ID")
+        expect(response).to match("Questão inválida, verifique o Id")
       end
     end
   end

@@ -37,7 +37,7 @@ describe FaqModule::ListService do
           @listService = FaqModule::ListService.new({'query' => ''}, 'search')
 
           response = @listService.call()
-          expect(response).to match('nada encontrado')
+          expect(response).to match('Nada Encontrado')
         end
       end
 
@@ -69,13 +69,13 @@ describe FaqModule::ListService do
       end
 
       context "Valid hastag" do
-        it "With valid hashtag, find question and answer in response" do
+        it "find question and answer in response" do
           faq = create(:faq)
           hashtag = create(:hashtag)
           create(:faq_hashtag, faq: faq, hashtag: hashtag)
 
           @listService = FaqModule::ListService.new(
-            { 'query' => hashtag.name }, 'search')
+            { 'query' => hashtag.name }, 'search_by_hashtag')
 
           response = @listService.call()
 

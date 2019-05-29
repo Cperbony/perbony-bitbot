@@ -17,7 +17,7 @@ module FaqModule
           end
         end
         faq.delete
-        "Deletado com sucesso"
+        "Deletado com Sucesso"
       end
     end
   end
