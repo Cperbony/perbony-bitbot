@@ -2,7 +2,6 @@ require_relative './../../spec_helper.rb'
 
 describe FaqModule::CreateService do
   before do
-    @company = create(:company)
     @question = FFaker::Lorem.sentence
     @answer = FFaker::Lorem.sentence
     @hashtags = "#{FFaker::Lorem.word}, #{FFaker::Lorem.word}"
